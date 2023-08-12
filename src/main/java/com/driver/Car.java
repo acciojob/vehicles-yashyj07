@@ -9,6 +9,8 @@ public class Car extends Vehicle {
     private int currentGear;
     private int seats;
 
+
+    //----------------------------------------- Constructor ---------------------------
     public Car(String name, boolean isManual) {
         super(name);
         this.isManual = isManual;
@@ -26,9 +28,40 @@ public class Car extends Vehicle {
         this.currentGear = 1;
     }
 
+
+
+    //--------------------------------------- Setters -----------------------------------
+    public void setWheels(int wheels) {
+        this.wheels = wheels;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setDoors(int doors) {
+        this.doors = doors;
+    }
+
+    public void setManual(boolean manual) {
+        isManual = manual;
+    }
+
+    public void setCurrentGear(int currentGear) {
+        this.currentGear = currentGear;
+    }
+
+    public void setSeats(int seats) {
+        this.seats = seats;
+    }
+
     public void setGears(int gears) {
         this.gears = gears;
     }
+
+
+
+    //------------------------------------ getters --------------------------------
 
     public int getWheels() {
         return wheels;
@@ -57,6 +90,9 @@ public class Car extends Vehicle {
     public int getSeats() {
         return seats;
     }
+
+
+    //-------------------------------------- other methods --------------------------------
 
     public void changeGear(int newGear){
         this.currentGear = newGear;
