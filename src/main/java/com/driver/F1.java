@@ -5,7 +5,8 @@ public class F1 extends Car {
     //----------------- constructor --------------------
     public F1(String name, boolean isManual) {
         //Use arbitrary values for parameters which are not mentioned
-        super(name, isManual);
+//        super(name, isManual);
+        super(name,0,0,0,isManual,"arbitary",0);
     }
 
 
@@ -32,25 +33,16 @@ public class F1 extends Car {
         }
 
 
-        if(newSpeed>0 && newSpeed<=50){
-            super.setGears(1);
-        }else if(newSpeed<=100){
-            super.setGears(2);
-        }else if(newSpeed<=150){
-            super.setGears(3);
-        }else if(newSpeed<=200){
-            setGears(4);
-        }else if(newSpeed<=250){
-            setGears(5);
-        }else{
-            setGears(6);
-        }
-
-
         //for all other cases, change the gear accordingly
 
         if(newSpeed > 0) {
-            super.changeSpeed(newSpeed, super.getCurrentDirection());
+            changeSpeed(newSpeed, getCurrentDirection());
+            if(newSpeed<=50){ changeGear(1);}
+            else if(newSpeed<=100){ changeGear(2);}
+            else if(newSpeed<=150){ changeGear(3);}
+            else if(newSpeed<=200){ changeGear(4);}
+            else if(newSpeed<=250){ changeGear(5);}
+            else{ changeGear(6); }
         }
     }
 }
